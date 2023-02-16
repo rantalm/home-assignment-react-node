@@ -1,0 +1,24 @@
+version: "3"
+services:
+  front:
+    build: ./client
+    ports:
+      - 3000:3000
+    container_name: t-client-container
+    environment:
+      - WATCHPACK_POLLING=true
+    volumes:
+      - ./client/public:/app/public
+      - ./client/src:/app/src
+    depends_on:
+      - backend
+
+  backend:
+    build: ./server
+    ports:
+      - 5500:5500
+    container_name: t-server-container
+    volumes:
+      - ./server/models:/app/models
+      - ./server/utils:/app/utils
+      - ./server/server.js:/app/server.js

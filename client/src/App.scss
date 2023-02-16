@@ -1,0 +1,21 @@
+/* reset */
+html, body, * {
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  width: 100%;
+  padding-top: 100px;
+  min-height: 100vh;
+}
+
+a, a:active, a:visited, a:focus {
+  color: inherit;
+}
+
+.container {
+  width: 1200px;
+  max-width: 96%;
+  margin: 0 auto;
+}
